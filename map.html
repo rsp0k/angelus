@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <link href="https://unpkg.com/maplibre-gl@3.x/dist/maplibre-gl.css" rel="stylesheet" />
+    <style>
+      body { margin: 0; }
+      #map { height: 100vh; }
+    </style>
+  </head>
+  <body>
+    <div id="map" />
+    <script src="https://unpkg.com/maplibre-gl@3.x/dist/maplibre-gl.js"></script>
+    <script>
+      const apiKey = "v1.public.eyJqdGkiOiJjZmMxNjI2MS1hM2IxLTRjZGMtYWZlMi0wM2JjZGRlYjA4M2YifSC9kidBrUCRi1C4Ug-bP4ks8eIohbOJWwLUBlqhQf_Ac6I6z8u41IKSFXnIPdOPQGEVI66NnfSfn7kyPOaykPWiHK8W9Q_V3nfojUc9TSpYg3kZ6U3cokwtW-LjWuoqupG4q12gStVYbc5d6wMtFn0UEnhkgF4bjM2Mm7iNC6Zcge2fP991wIl767x2S6I_dWCGd04tkslru4LmGyKE5fqPRJ-S0rwJ6fMeB742gxpAP46W23Z0mnrT8Bo95vpoiPUbvvFQkpmFWxTcxBy4KhAfF8V0eRxLB54AhMgJoPUvM2X-R9EtnzM2w-3wJo82AQ8TrI0J6IDOCxiclN1AIFI.ZTA0NDFlODYtNGY5Mi00NWU4LTk1MDgtMmY4YmViYWFhYjUz";
+      const mapName = "explore.map.Esri";
+      const region = "sa-east-1";
+
+      const map = new maplibregl.Map({
+        container: "map",
+        style: `https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=${apiKey}`,
+        center: [-123.115898, 49.295868],
+        zoom: 11,
+      });
+      map.addControl(new maplibregl.NavigationControl(), "top-left");
+    </script>
+  </body>
+</html>
